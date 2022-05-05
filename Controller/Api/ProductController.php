@@ -1,6 +1,10 @@
 <?php
 class ProductController extends BaseController
 {
+
+    function set_id($id){
+        $this->id=$id;
+    }
     /**
      * "/user/list" Endpoint - Get list of users
      */
@@ -13,13 +17,8 @@ class ProductController extends BaseController
         if (strtoupper($requestMethod) == 'GET') {
             try {
                 $productModel = new ProductModel();
-                //define um padrão para o limit
-                $intLimit = 10;
-                if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-                    $intLimit = $arrQueryStringParams['limit'];
-                }
  
-                $arrUsers = $productModel->getProducts($intLimit);
+                $arrUsers = $productModel->getProducts();
                 $responseData = json_encode($arrUsers);
                 
             } catch (Error $e) {
@@ -43,4 +42,24 @@ class ProductController extends BaseController
             );
         }
     }
+    public function deleteAction($id){
+        $strErrorDesc = '';
+        $requestMethod = $_SERVER["REQUEST_METHOD"];
+        $arrQueryStringParams = $this->getQueryStringParams();
+ 
+        if (strtoupper($requestMethod) == 'DELETE') {
+            try {
+                $productModel = new productModel();
+            $productModel->deleteProducts($id);
+            
+            } catch (Error $e) {
+                $strErrorDesc = $e->getMessage().'Something went wrong! Please contact support.';
+                $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
+            }
+        } else {
+            $strErrorDesc = 'Method not supported';
+            $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
+        }
+    }
+    
 }

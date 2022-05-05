@@ -29,6 +29,17 @@ class Database
         }
         return false;
     }
+    public function delete($query = "" , $params = [])
+    {
+        try {
+            $stmt = $this->executeStatement( $query , $params );               
+            $stmt->close();
+ 
+        } catch(Exception $e) {
+            throw New Exception( $e->getMessage() );
+        }
+        return false;
+    }
  
     private function executeStatement($query = "" , $params = [])
     {
