@@ -1,7 +1,5 @@
 <?php 
 require __DIR__."/processing/require_master.php";
-//require_once "/MAMP/htdocs/addproduct/processing/functions.php";
-$sku_error = $name_error = $price_error = $weight_error = $size_error = $height_error = $width_error = $length_error = $select_error    =  "";
 if(isset($_POST['submit'])){
 
 

@@ -25,4 +25,5 @@ class DVD extends Product{
         mysqli_query($mysqli, $cadProp);
     }
 
-}?>
+}
+?>

@@ -11,3 +11,4 @@ class ProductModel extends Database
          return $this->delete("DELETE FROM products WHERE id = $id");
     }
 }
+?>

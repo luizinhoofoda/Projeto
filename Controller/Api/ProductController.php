@@ -45,7 +45,7 @@ class ProductController extends BaseController
     public function deleteAction($id){
         $strErrorDesc = '';
         $requestMethod = $_SERVER["REQUEST_METHOD"];
-        $arrQueryStringParams = $this->getQueryStringParams();
+        
  
         if (strtoupper($requestMethod) == 'DELETE') {
             try {
@@ -63,3 +63,4 @@ class ProductController extends BaseController
     }
     
 }
+?>

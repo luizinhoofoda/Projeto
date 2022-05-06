@@ -32,6 +32,7 @@ if (isChecked == true){
 
 }
 });
+
 $(".remove-slick").on("click", function () {
 for(let i = 0; i < deleteFromScreen.length; i++){
   $('#'+deleteFromScreen[i]).remove()
