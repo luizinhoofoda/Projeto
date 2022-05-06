@@ -2,7 +2,7 @@
 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 //include_once "/MAMP/htdocs/addproduct/class/product.php";
-require_once "/MAMP/htdocs/addproduct/class/product.php";
+
 class Forniture extends Product{
 
     function set_height($height){

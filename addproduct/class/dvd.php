@@ -1,7 +1,6 @@
 <?php 
 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
-require_once "/MAMP/htdocs/addproduct/class/product.php";
 class DVD extends Product{
     
     

@@ -1,12 +1,3 @@
-async function getproducts() {
-  let url = "http://localhost/index.php/product/list";
-  try {
-    let res = await fetch(url);
-    return await res.json();
-  } catch (error) {
-    console.log("erro");
-  }
-}
 function deleteproducts(id) {
   var requestOptions = {
     method: 'DELETE',
@@ -17,12 +8,45 @@ function deleteproducts(id) {
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 }
-function arrayRemove(arr, value) { 
-    
-  return arr.filter(function(ele){ 
-      return ele != value; 
-  });
+
+let deleteFromScreen = [];
+let i  = 0; 
+$(document).on("click", "#delete-prod", function () {
+var isChecked = $(this).is(":checked");
+if (isChecked == true){
+//pega o nome do container e index que é gerado pelo slider e adiciona no array
+  //deleteFromScreen[i] = $(this).attr('name');
+  //i++
+  deleteFromScreen[i] = $(this).closest('div').attr('id');
+  i++
 }
+ else {
+  for(let i = 0; i < deleteFromScreen.length; i++){
+    //pega o index e nome do container da checkbox deselecionada e remove do array
+    if ( deleteFromScreen[i] === $(this).closest('div').attr('id')  ) { 
+    //&& deleteFromScreen[i+1] ===$(this).closest('div').attr('data-slick-index')
+    deleteFromScreen.splice(i, 1)
+    
+  }
+  }
+
+}
+});
+$(".remove-slick").on("click", function () {
+for(let i = 0; i < deleteFromScreen.length; i++){
+  $('#'+deleteFromScreen[i]).remove()
+  
+  deleteproducts(deleteFromScreen[i])
+ 
+}
+deleteFromScreen.length = 0
+});
+
+
+
+
+
+
 $(".dvd").slick({
   slidesToShow: 4,
   slidesToScroll: 4,
@@ -38,46 +62,20 @@ $(".forniture").slick({
   slidesToScroll: 3,
   infinite: false
 });
-let deleteFromScreen = [];
-let i  = 0; 
-$(document).on("click", "#delete-prod", function () {
-  var isChecked = $(this).is(":checked");
-  if (isChecked == true){
- //pega o nome do container e index que é gerado pelo slider e adiciona no array
-    //deleteFromScreen[i] = $(this).attr('name');
-    //i++
-    deleteFromScreen[i] = $(this).closest('div').attr('id');
-    i++
-    console.log(deleteFromScreen);
+
+
+
+
+async function getproducts() {
+  let url = "http://localhost/index.php/product/list";
+  try {
+    let res = await fetch(url);
+    return await res.json();
+  } catch (error) {
+    console.log("erro");
   }
-   else {
-    console.log("foi desmarcado");
-    for(let i = 0; i < deleteFromScreen.length; i++){
-      //pega o index e nome do container da checkbox deselecionada e remove do array
-      if ( deleteFromScreen[i] === $(this).closest('div').attr('id')  ) { 
-      //&& deleteFromScreen[i+1] ===$(this).closest('div').attr('data-slick-index')
-      deleteFromScreen.splice(i, 1)
-      
-    }
-    }
-console.log(deleteFromScreen)
-  }
-});
-$(".remove-slick").on("click", function () {
-  for(let i = 0; i < deleteFromScreen.length; i++){
-    $('#'+deleteFromScreen[i]).remove()
-    
-    deleteproducts(deleteFromScreen[i])
-   
 }
-  deleteFromScreen.length = 0
-});
 
-$(".remove-slick1").on("click", function () {
-  console.log(productsOnScreen)
-  
-
-});
 
 
 

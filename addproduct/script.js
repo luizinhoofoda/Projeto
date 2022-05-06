@@ -1,14 +1,9 @@
 
 //mudar, codigo horrivel péssimo
-$('#productSelect').on('change',function(){
+$('#productType').on('change',function(){
     var selection = $(this).val();
    switch(selection){
-   case "product":
-   $("#optionsBook").hide()
-   $("#optionsDvd").hide()
-   $("#optionsForniture").hide()
-   break;
-   case "book":
+    case "book":
    $("#optionsBook").show()
    $("#optionsDvd").hide()
    $("#optionsForniture").hide()
@@ -28,3 +23,133 @@ $('#productSelect').on('change',function(){
    
    }
 });
+$(document).ready(function() {
+  $("#product_form").validate({
+  rules: {
+  sku : {
+    required: true,
+  },
+  name: {
+    required: true,
+  
+  },
+  price: {
+  required: true,
+  number: true,
+  
+  },
+  productType: 
+  {
+    required: true
+  },
+
+  size: {
+    required: {
+    depends: function(elem) {
+    return $("#productType").val() == "dvd"
+    }
+    },
+    number: true,
+    min: 1
+    },
+  weight: {
+  required: {
+  depends: function(elem) {
+  return $("#productType").val() == "book"
+  }
+  },
+  number: true,
+  min: 1
+  }
+  }, 
+  height: {
+    required: {
+    depends: function(elem) {
+    return $("#productType").val() == "forniture"
+    }
+    },
+    number: true,
+    min: 1
+    },
+ 
+  width: {
+      required: {
+      depends: function(elem) {
+      return $("#productType").val() == "forniture"
+      }
+      },
+      number: true,
+      min: 1
+      },
+  length: {
+      required: {
+      depends: function(elem) {
+        return $("#productType").val() == "forniture"
+        }
+        },
+      number: true,
+      min: 1
+        },
+
+  
+  messages:{
+sku:{
+  required: "Please, submit required data",
+  
+},
+name:{
+  required: "Please, submit required data",
+  
+},
+price:{
+  required: "Please, submit required data",
+  number: "Please, the data must be a number"
+},
+productType:{
+  required: "Please, select a product type",
+  
+},
+size:{
+  required: "Please, submit required data",
+  number: "Please, the data must be a number",
+  min: "Please, the data must be greater than zero"
+
+},
+weight:{
+  required: "Please, submit required data",
+  number: "Please, the data must be a number",
+  min: "Please, the data must be greater than zero"
+
+},
+height:{
+  required: "Please, submit required data",
+  number: "Please, the data must be a number",
+  min: "Please, the data must be greater than zero"
+
+},
+width:{
+  required: "Please, submit required data",
+  number: "Please, the data must be a number",
+  min: "Please, the data must be greater than zero"
+
+},
+length:{
+  required: "Please, submit required data",
+  number: "Please, the data must be a number",
+  min: "Please, the data must be greater than zero"
+
+},
+  },
+
+
+
+  errorPlacement: function(error, element) {
+    if (element.attr("name") == "sku" )
+        error.insertAfter(".sku");
+    else if  (element.attr("name") == "phone" )
+        error.insertAfter(".some-other-class");
+    else
+        error.insertAfter(element);
+}});
+  });
+  
