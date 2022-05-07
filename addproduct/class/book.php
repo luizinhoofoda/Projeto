@@ -1,6 +1,7 @@
 <?php 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 require_once "/MAMP/htdocs/addproduct/class/product.php";
+//set the book class, her unique value and the save to db method
 class Book extends Product{
 
 function set_weight($weight){

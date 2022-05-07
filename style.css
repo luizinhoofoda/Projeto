@@ -1,0 +1,29 @@
+
+header{
+    margin-bottom: 4em;
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+}
+header h1 {
+    display: inline;
+    margin-left: 40%;
+    
+}
+.button{
+    margin-left: 30%;
+}
+
+.product-box h1, .product-box h2, .product-box .delete-checkbox{
+    margin-left: 5em;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    
+    border-top: 1px solid black;
+    width: 99%;
+}
+footer p{
+    padding-left: 40%;
+}

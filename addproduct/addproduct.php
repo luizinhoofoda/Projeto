@@ -25,54 +25,62 @@ if(isset($_POST['submit'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>
 <body>
-    <div>
+    <header>
+        <h1>Product Add</h1>
+       
+        <button class="buttons headerButton" id="cancel" name="return">Cancel</button>
+    </header>
+    <div class="form-container">
 <form action="" method="POST" id="product_form">
         <label for="sku" class="sku">Sku:</label>
         <input type="text" id="sku" name="sku" placeholder="sku">
         
-        <label for="name">Name:</label>
+        <label for="name" class="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="name">
         
-        <label for="price">Price:</label>
+        <label for="price" class="price">Price:</label>
         <input type="text" id="price" name="price" placeholder="price">
        
         <label for="productType">Type Switcher</label>
         <select name="productType" id="productType">
             <option value="" disabled selected hidden>Products</option>
             <option value="book">Book</option>
-            <option value="forniture">Forniture</option>
+            <option value="furniture">Furniture</option>
             <option value="dvd">Dvd</option>
         </select>
-        
+
         <div id = "optionsBook">
-            <label for="weight">Weight:</label>
+            <label for="weight" class="weight">Weight:</label>
             <input type="text" id="weight" name="weight" placeholder="weight">
             
             <p>Please provide the weight in Kg</p>
             
         </div>
-        <div id = "optionsForniture">
-            <label for="height">Height:</label>
+        <div id = "optionsFurniture">
+            <label for="height" class="height">Height:</label>
             <input type="text" id = "height" name="height">
             
-            <label for="width">Width:</label>
+            <label for="width" class="width">Width:</label>
             <input type="text" id = "width" name="width" >
             
-            <label for="length">Length:</label>
+            <label for="length" class="length">Length:</label>
             <input type="text" id = "length" name="length">  
          
             <p>Please provide the dimensions in HxWxL format</p>
+
         </div>
         <div id = "optionsDvd">
-            <label for="size">Size:</label>
+            <label for="size" class="size">Size:</label>
             <input type="text" id = "size" name="size" placeholder="size">
             
             <p>Please provide the size in MB</p>
+
         </div>
-        
+        <button class="buttons formButton" type="submit" form="product_form" name="submit">Save</button>
     </form>
     </div>
-    <div><input type="submit" form="product_form" name="submit"></div>
+    <div></div>
+    <footer><p>Scandiweb Test assignment</p></footer>
     <script type="text/javascript" src="script.js"></script>
     
     </body>

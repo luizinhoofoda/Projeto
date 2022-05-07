@@ -4,9 +4,50 @@
 #optionsDvd{
     display: none;
 }
-#optionsForniture{
+#optionsFurniture{
     display: none;
 }
-input{
+body{
+    font: Lato;
+}
+header{
+    border-bottom: 1px solid black;
+    padding-bottom: 1.5em;
+}
+header h1{
+    margin: 0 0 0 40%;
+    display: inline;
+}
+.form-container{
+
+margin: 2% 0 0 40%;
+
+}
+.headerButton{
+
+margin-top: 0.6em;
+margin-left: 30%;
+}
+
+label, input, select, p{
     display: block;
+    margin: 0 0 1em 0.5em;
+}
+.formButton{
+    margin-left: 5em;
+}
+
+.my-error-class {
+    color:rgb(231, 106, 106);
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    
+    border-top: 1px solid black;
+    width: 99%;
+}
+footer p{
+    padding-top: 1em;
+    padding-left: 40%;
 }

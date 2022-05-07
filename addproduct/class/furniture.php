@@ -2,8 +2,8 @@
 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 //include_once "/MAMP/htdocs/addproduct/class/product.php";
-
-class Forniture extends Product{
+//set the furniture class, hers unique values and the save to db method
+class Furniture extends Product{
 
     function set_height($height){
         $this->height = $height;

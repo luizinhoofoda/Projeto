@@ -1,8 +1,8 @@
 <?php 
 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
-class DVD extends Product{
-    
+//set the DVD class, her unique value and the save to db method
+class Dvd extends Product{
     
     function set_size($size){
     

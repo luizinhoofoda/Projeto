@@ -1,49 +1,58 @@
 
-//mudar, codigo horrivel péssimo
+/// controll the selection option display
 $('#productType').on('change',function(){
     var selection = $(this).val();
    switch(selection){
     case "book":
    $("#optionsBook").show()
    $("#optionsDvd").hide()
-   $("#optionsForniture").hide()
+   $("#optionsFurniture").hide()
   break;
-  case "forniture":
-    $("#optionsForniture").show()
+  case "furniture":
+    $("#optionsFurniture").show()
     $("#optionsBook").hide()
     $("#optionsDvd").hide()
    break;
    case "dvd":
     $("#optionsDvd").show()
     $("#optionsBook").hide()
-    $("#optionsForniture").hide()
+    $("#optionsFurniture").hide()
    break;
    default:
    $("#optionsBook").hide()
    
    }
 });
+//cancel button logic to go to another page
+$('#cancel').click(function() {
+  window.location.href = 'http://localhost';
+  return false;
+});
+
+//logic to validate the form, its using the Jquerry validate plugin
 $(document).ready(function() {
   $("#product_form").validate({
-  rules: {
+    errorClass: "my-error-class",
+  //defines what would be check if when the submit button is pressed, if is required, if it is a number etc
+rules: {
   sku : {
     required: true,
   },
-  name: {
+name: {
     required: true,
   
   },
-  price: {
+price: {
   required: true,
   number: true,
   
   },
-  productType: 
+productType: 
   {
     required: true
   },
 
-  size: {
+size: {
     required: {
     depends: function(elem) {
     return $("#productType").val() == "dvd"
@@ -52,46 +61,46 @@ $(document).ready(function() {
     number: true,
     min: 1
     },
-  weight: {
+weight: {
   required: {
-  depends: function(elem) {
-  return $("#productType").val() == "book"
-  }
+    depends: function(elem) {
+      return $("#productType").val() == "book"
+    }
   },
   number: true,
   min: 1
-  }
   }, 
-  height: {
+height: {
     required: {
-    depends: function(elem) {
-    return $("#productType").val() == "forniture"
-    }
+      depends: function(elem) {
+        return $("#productType").val() == "furniture"
+      }
     },
     number: true,
     min: 1
     },
  
-  width: {
+width: {
       required: {
-      depends: function(elem) {
-      return $("#productType").val() == "forniture"
-      }
+        depends: function(elem) {
+          return $("#productType").val() == "furniture"
+        }
       },
       number: true,
       min: 1
       },
-  length: {
+length: {
       required: {
       depends: function(elem) {
-        return $("#productType").val() == "forniture"
-        }
-        },
+        return $("#productType").val() == "furniture"
+      }
+     },
       number: true,
       min: 1
         },
 
-  
+      },
+    //define the error messages that will shown when the data fail to pass the validation
   messages:{
 sku:{
   required: "Please, submit required data",
@@ -142,12 +151,24 @@ length:{
   },
 
 
-
+//changes the place that the erro message will be shown
   errorPlacement: function(error, element) {
     if (element.attr("name") == "sku" )
         error.insertAfter(".sku");
-    else if  (element.attr("name") == "phone" )
-        error.insertAfter(".some-other-class");
+    else if  (element.attr("name") == "name" )
+        error.insertAfter(".name");
+    else if  (element.attr("name") == "price" )
+        error.insertAfter(".price");
+    else if  (element.attr("name") == "size" )
+        error.insertAfter(".size");
+    else if  (element.attr("name") == "weight" )
+        error.insertAfter(".weight");
+    else if  (element.attr("name") == "height" )
+        error.insertAfter(".height");
+    else if  (element.attr("name") == "width" )
+        error.insertAfter(".width");
+    else if  (element.attr("name") == "length" )
+        error.insertAfter(".length");
     else
         error.insertAfter(element);
 }});

@@ -3,7 +3,7 @@ require_once __DIR__."/require_master.php";
 
 function createDvd($sku, $name, $price,$size){
 
-    $dvd = new DVD;
+    $dvd = new Dvd;
     $dvd->set_sku($sku);
     $dvd->set_name($name);
     $dvd->set_price($price);
@@ -13,7 +13,7 @@ function createDvd($sku, $name, $price,$size){
 }
 function createForniture($sku, $name, $price,$height, $length, $width){
 
-    $forniture = new Forniture;
+    $forniture = new Furniture;
     $forniture->set_sku($sku);
     $forniture->set_name($name);
     $forniture->set_price($price);
@@ -53,66 +53,5 @@ function createProduct($arr)
     
 }
 
-function validateData($arr){
-    if(empty($arr["sku"])){
-        return $sku_error = "Required";
-    }
-    if(empty($arr["name"])){
-        $name_error = "Required";
-    }
-    if(empty($arr["price"])){
-        $price_error = "Required";
-    }
-    else if(!is_numeric($arr["price"])){
-        $price_error = "Invalid type of data";
-    }
 
-    if(empty($arr["productType"]))
-    {
-        $select_error = "Please select a product type";
-    }
-    else{
-
-    
-    switch($arr['productType']){
-        case 'book':
-            if(empty($arr['weight'])){
-                $weight_error = "Required";
-            }
-            else if(!is_numeric($arr['weight'])){
-                $weight_error = "Invalid type of data";
-            };
-        break;
-        case 'forniture':
-            
-            if(empty($arr['height'])){
-                $weight_error = "Required";
-            }
-            else if(!is_numeric($arr['height'])){
-                $weight_error = "Invalid type of data";
-            };
-            if(empty($arr['width'])){
-                $width_error = "Required";
-            }
-            else if(!is_numeric($arr['width'])){
-                $width_error = "Invalid type of data";
-            };
-            if(empty($arr['length'])){
-                $length_error = "Required";
-            }
-            else if(!is_numeric($arr['length'])){
-                $length_error = "Invalid type of data";
-            };
-            break;
-        case 'dvd':
-            if(empty($arr['size'])){
-                $size_error = "Required";
-            }
-            else if(!is_numeric($arr['size'])){
-                $size_error = "Invalid type of data";
-            };
-         
-    }
-}
-}
 ?>

@@ -1,9 +1,8 @@
 <?php
 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
-//produto generico
+//set the generic product class, the generic value and the base of the save to db method
 abstract class Product{
-    //pediram para usar setters deus que dor
     //public function __construct($sku, $name, $price) {
       //  $this->sku = $sku;
        // $this->name = $name;
