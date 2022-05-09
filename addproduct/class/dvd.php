@@ -5,12 +5,10 @@ require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 class Dvd extends Product{
     
     function set_size($size){
-    
         $this->size = $size;
        }
-
+       
        function get_size(){
-
         return $this->size;
        }
     

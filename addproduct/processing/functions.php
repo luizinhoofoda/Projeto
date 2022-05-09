@@ -11,7 +11,7 @@ function createDvd($sku, $name, $price,$size){
    
     $dvd->saveToDb();
 }
-function createForniture($sku, $name, $price,$height, $length, $width){
+function createFurniture($sku, $name, $price,$height, $length, $width){
 
     $forniture = new Furniture;
     $forniture->set_sku($sku);
@@ -41,16 +41,24 @@ function createProduct($arr)
         case 'book':
             createBook($arr['sku'],$arr['name'],$arr['price'], $arr['weight']);
         break;
-        case 'forniture':
-            createForniture($arr['sku'], $arr['name'], $arr['price'], $arr['height'], $arr['width'], $arr['length']);
+        case 'furniture':
+            createFurniture($arr['sku'], $arr['name'], $arr['price'], $arr['height'], $arr['width'], $arr['length']);
             break;
         case 'dvd':
              createDvd($arr['sku'],$arr['name'],$arr['price'],$arr['size']);
-         echo "chegou até aqui";
+            break; 
     }
     
     
     
+}
+function redirect()
+{
+    $string = '<script type="text/javascript">';
+    $string .= 'window.location = "http://localhost/"';
+    $string .= '</script>';
+
+    echo $string;
 }
 
 

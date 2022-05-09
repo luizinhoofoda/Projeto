@@ -1,53 +1,49 @@
 //function that is call in the mass delete button and  receive the id and send id to be deleted via the api
-function deleteproducts(id) {
+function deleteProductsFromDB(id) {
   var requestOptions = {
-    method: 'DELETE',
+    method: 'POST',
     redirect: 'follow'
   };
-  fetch("http://localhost/index.php/product/delete/" + id, requestOptions)
+  fetch("http://localhost/api.php/product/delete/" + id, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 }
 
-//check box logic
-//setup of variables
-let deleteFromScreen = [];
-let i  = 0; 
-//verify is the check box is selected
-$(document).on("click", "#delete-prod", function () {
-var isChecked = $(this).is(":checked");
-if (isChecked == true){
-//then gets the id of the product from the div id and adds it to the array
-  deleteFromScreen[i] = $(this).closest('div').attr('id');
-  i++
-}
- else {
-  for(let i = 0; i < deleteFromScreen.length; i++){
-  //when unselect remove the id from the array
-    if ( deleteFromScreen[i] === $(this).closest('div').attr('id')  ) { 
-    deleteFromScreen.splice(i, 1)
-  }
-  }
-
-}
-});
 
 
-
-//two buttons logic
-//mass delete button logic, get all the ids from the array and pass it to a function that will send it to the api
+//mass delete button logic, check all checkboxes, delete only the ones that are checked. initially i did a more focused idea but the AutoQa wasn't acepting
 $(".remove-slick").on("click", function () {
-for(let i = 0; i < deleteFromScreen.length; i++){
-  $('#'+deleteFromScreen[i]).remove()
+  deleteFromScreen = []
+  let y = 0
+  checkboxes = document.getElementsByClassName('delete-checkbox');
+  for (i=0; i<checkboxes.length;i++){
+    var isChecked = $(checkboxes[i]).is(":checked");
+     if (isChecked == true){
+      checkbox = checkboxes[i]
+   
+      deleteFromScreen[y] = $(checkbox).closest('div').attr('id')
+      y++
+
   
-  deleteproducts(deleteFromScreen[i])
- 
+    }
 }
-deleteFromScreen.length = 0
+//delete all checked boxes from the screen and DB
+for(let i = 0; i < deleteFromScreen.length; i++){
+   $('#'+deleteFromScreen[i]).remove()
+   
+  if(deleteFromScreen[i] != undefined)
+
+   deleteProductsFromDB(deleteFromScreen[i])
+   
+ }
 });
+
+
+
 //add logic, simply go to another page
 $('#addProductButton').click(function() {
+
   window.location.href = 'http://localhost/addproduct/addproduct.php';
   return false;
 });
@@ -74,7 +70,7 @@ $(".forniture").slick({
 
 //get the json from the api
 async function getproducts() {
-  let url = "http://localhost/index.php/product/list";
+  let url = "http://localhost/api.php/product/list";
   try {
     let res = await fetch(url);
     return await res.json();
@@ -103,10 +99,10 @@ async function renderproducts() {
                       </div>`;
       //pass the block to the slic function 
       $(".book").slick("slickAdd", htmlSegment);
-
+      
     } else if (products[i].propName === "size") {
-       var htmlSegment = `<div class="product-box" id = ${products[i].prodId}>
-                          <input type="checkbox" name="dvd" class = "delete-checkbox" id=delete-prod>
+      var htmlSegment = `<div class="product-box" id = ${products[i].prodId}>
+                          <input type="checkbox" name="dvd" class = "delete-checkbox" id="delete-prod">
                           <h1>Sku: ${products[i].prodSku} </h1>
                           <h2>Name: ${products[i].prodName}</h2>
                           <h2>Price: ${products[i].prodPrice}</h2>

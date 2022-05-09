@@ -5,15 +5,11 @@ class ProductController extends BaseController
     function set_id($id){
         $this->id=$id;
     }
-    /**
-     * "/user/list" Endpoint - Get list of users
-     */
+    //list action, should be call to have acess to a json file containing the products from the database
     public function listAction()
     {
         $strErrorDesc = '';
         $requestMethod = $_SERVER["REQUEST_METHOD"];
-        $arrQueryStringParams = $this->getQueryStringParams();
- 
         if (strtoupper($requestMethod) == 'GET') {
             try {
                 $productModel = new ProductModel();
@@ -30,7 +26,6 @@ class ProductController extends BaseController
             $strErrorHeader = 'HTTP/1.1 422 Unprocessable Entity';
         }
  
-        // send output
         if (!$strErrorDesc) {
             $this->sendOutput(
                 $responseData,
@@ -42,12 +37,13 @@ class ProductController extends BaseController
             );
         }
     }
+    //delete action to delete one or more products from the db
     public function deleteAction($id){
         $strErrorDesc = '';
         $requestMethod = $_SERVER["REQUEST_METHOD"];
         
  
-        if (strtoupper($requestMethod) == 'DELETE') {
+        if (strtoupper($requestMethod) == 'POST') {
             try {
                 $productModel = new productModel();
             $productModel->deleteProducts($id);

@@ -15,7 +15,7 @@ class Database
             throw new Exception($e->getMessage());   
         }           
     }
- //seleciona dados da base de dados
+ //Select/delete from the database
     public function select($query = "" , $params = [])
     {
         try {

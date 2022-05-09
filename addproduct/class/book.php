@@ -7,6 +7,7 @@ class Book extends Product{
 function set_weight($weight){
     $this->weight = $weight;
 }
+
 function saveToDb(){
     global $mysqli;
     $cadProd =   "INSERT INTO products (prodSku, prodName, prodPrice)

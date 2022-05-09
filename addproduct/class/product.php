@@ -9,32 +9,27 @@ abstract class Product{
        // $this->price = $price;    
      //  }
 
-       function set_sku($sku){
-        
+       function set_sku($sku){        
         $this->sku = $sku;
        }
     
        function set_name($name){
-        
         $this->name = $name;
        }
     
-       function set_price($price){
-        
+       function set_price($price){   
         $this->price = $price;
-       }
-       
-       function get_sku(){
-    
+       } 
+
+       function get_sku(){    
         return $this->sku;
        }
     
-       function get_name(){
-    
+       function get_name(){    
         return $this->name;
        }
-       function get_price(){
-    
+
+       function get_price(){   
         return $this->price;
        }
        

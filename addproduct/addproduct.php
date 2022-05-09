@@ -3,9 +3,9 @@ require __DIR__."/processing/require_master.php";
 if(isset($_POST['submit'])){
 
 
-    //validateData($_POST);
+    
     createProduct($_POST);
-    header("Location: http://localhost");
+    redirect();
 }
 
 
@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="../addproduct/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
             <label for="weight" class="weight">Weight:</label>
             <input type="text" id="weight" name="weight" placeholder="weight">
             
-            <p>Please provide the weight in Kg</p>
+            <p>Please provide the weight in KG</p>
             
         </div>
         <div id = "optionsFurniture">
