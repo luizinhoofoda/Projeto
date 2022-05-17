@@ -14,8 +14,8 @@ function saveToDb(){
                  VALUES('$this->sku', '$this->name', '$this->price');";
     $cadProp =  "INSERT INTO properties (propName, propValue, prodId) 
                  VALUES('weight', '$this->weight', LAST_INSERT_ID());";
-    mysqli_query($mysqli, $cadProd);
-    mysqli_query($mysqli, $cadProp);
+   $this->post($cadProd);
+   $this->post($cadProp);
 }
 
 

@@ -151,7 +151,7 @@ length:{
   },
 
 
-//changes the place that the erro message will be shown
+//changes the place that the error message will be shown
   errorPlacement: function(error, element) {
     if (element.attr("name") == "sku" )
         error.insertAfter(".sku");

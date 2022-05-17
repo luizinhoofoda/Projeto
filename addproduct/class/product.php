@@ -2,7 +2,7 @@
 
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 //set the generic product class, the generic value and the base of the save to db method
-abstract class Product{
+abstract class Product extends Db{
     //public function __construct($sku, $name, $price) {
       //  $this->sku = $sku;
        // $this->name = $name;
@@ -34,9 +34,9 @@ abstract class Product{
        }
        
        function saveToDb(){
-        global $mysqli;
-        $querry = "INSERT INTO product (PRODUCT_SKU, PRODUCT_NAME, PRODUCT_PRICE) VALUES('$this->sku', '$this->name', '$this->price');";
-        mysqli_query($mysqli, $querry);
+        $cadProd = "INSERT INTO product (PRODUCT_SKU, PRODUCT_NAME, PRODUCT_PRICE) VALUES('$this->sku', '$this->name', '$this->price');";
+        $this->post($cadProd);
+        
     }
     }
     

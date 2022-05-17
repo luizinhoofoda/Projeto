@@ -41,7 +41,7 @@ class ProductController extends BaseController
     public function deleteAction($id){
         $strErrorDesc = '';
         $requestMethod = $_SERVER["REQUEST_METHOD"];
-        
+    
  
         if (strtoupper($requestMethod) == 'POST') {
             try {

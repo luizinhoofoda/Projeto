@@ -15,7 +15,7 @@ class Furniture extends Product{
         $this->length = $length;
     }
     function saveToDb(){
-        global $mysqli;
+
          $cadProd =  "INSERT INTO products (prodSku, prodName, prodPrice)
                       VALUES('$this->sku', '$this->name', '$this->price');";
          $cadProp =  "INSERT INTO properties (propName, propValue, prodId) 
@@ -26,8 +26,10 @@ class Furniture extends Product{
                      ('width', '$this->width', LAST_INSERT_ID()),
           
                       ('length', '$this->length', LAST_INSERT_ID());";
-         mysqli_query($mysqli, $cadProd);
-         mysqli_query($mysqli, $cadProp);
+         
+        $this->post($cadProd);
+        $this->post($cadProp);
+        
 
     }
 
