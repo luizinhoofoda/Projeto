@@ -3,23 +3,11 @@
 require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 //set the generic product class, the generic value and the base of the save to db method
 abstract class Product extends Db{
-    //public function __construct($sku, $name, $price) {
-      //  $this->sku = $sku;
-       // $this->name = $name;
-       // $this->price = $price;    
-     //  }
-
-       function set_sku($sku){        
+    public function __construct($sku, $name, $price) {
         $this->sku = $sku;
-       }
-    
-       function set_name($name){
         $this->name = $name;
+        $this->price = $price;    
        }
-    
-       function set_price($price){   
-        $this->price = $price;
-       } 
 
        function get_sku(){    
         return $this->sku;

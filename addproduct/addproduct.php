@@ -2,10 +2,11 @@
 require __DIR__."/processing/require_master.php";
 if(isset($_POST['submit'])){
 
-
-    
-    createProduct($_POST);
-    redirect();
+$prod = new ProductProcessing;
+$prodType = "create".$_POST['productType'];
+$prod->$prodType($_POST);
+  
+    $prod->redirect();
 }
 
 
@@ -44,14 +45,14 @@ if(isset($_POST['submit'])){
         <label for="productType">Type Switcher</label>
         <select name="productType" id="productType">
             <option value="" disabled selected hidden>Products</option>
-            <option value="book">Book</option>
-            <option value="furniture">Furniture</option>
-            <option value="dvd">Dvd</option>
+            <option value="Book">Book</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Dvd">Dvd</option>
         </select>
 
         <div id = "optionsBook">
             <label for="weight" class="weight">Weight:</label>
-            <input type="text" id="weight" name="weight" placeholder="weight">
+            <input type="text" id="weight" name="weight">
             
             <p>Please provide the weight in KG</p>
             
@@ -71,7 +72,7 @@ if(isset($_POST['submit'])){
         </div>
         <div id = "optionsDvd">
             <label for="size" class="size">Size:</label>
-            <input type="text" id = "size" name="size" placeholder="size">
+            <input type="text" id = "size" name="size">
             
             <p>Please provide the size in MB</p>
 

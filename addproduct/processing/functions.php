@@ -1,57 +1,26 @@
 <?php
-require_once __DIR__."/require_master.php";
+require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
+require_once "/MAMP/htdocs/addproduct/processing/db.php";
+class ProductProcessing extends Db
 
-function createDvd($sku, $name, $price,$size){
+{
 
-    $dvd = new Dvd;
-    $dvd->set_sku($sku);
-    $dvd->set_name($name);
-    $dvd->set_price($price);
-    $dvd->set_size($size);
-   
+function createDvd($arr){
+
+    $dvd = new Dvd($arr['sku'],$arr['name'],$arr['price'],$arr['size']);
     $dvd->saveToDb();
 }
-function createFurniture($sku, $name, $price,$height, $length, $width){
+function createFurniture($arr){
 
-    $forniture = new Furniture;
-    $forniture->set_sku($sku);
-    $forniture->set_name($name);
-    $forniture->set_price($price);
-    $forniture->set_height($height);
-    $forniture->set_length($length);
-    $forniture->set_width($width);
-   
+    $forniture = new Furniture($arr['sku'], $arr['name'], $arr['price'], $arr['height'], $arr['width'], $arr['length']);
     $forniture->saveToDb();
 }
-function createBook($sku, $name, $price,$weight){
+ function createBook($arr){
 
-    $book = new Book;
-    $book->set_sku($sku);
-    $book->set_name($name);
-    $book->set_price($price);
-    $book->set_weight($weight);
-   
+    $book = new Book($arr['sku'],$arr['name'],$arr['price'], $arr['weight']);
     $book->saveToDb();
 }
 
-function createProduct($arr) 
-    {
-        
-    switch($arr['productType']){
-        case 'book':
-            createBook($arr['sku'],$arr['name'],$arr['price'], $arr['weight']);
-        break;
-        case 'furniture':
-            createFurniture($arr['sku'], $arr['name'], $arr['price'], $arr['height'], $arr['width'], $arr['length']);
-            break;
-        case 'dvd':
-             createDvd($arr['sku'],$arr['name'],$arr['price'],$arr['size']);
-            break; 
-    }
-    
-    
-    
-}
 function redirect()
 {
     $string = '<script type="text/javascript">';
@@ -61,5 +30,6 @@ function redirect()
     echo $string;
 }
 
+}
 
 ?>

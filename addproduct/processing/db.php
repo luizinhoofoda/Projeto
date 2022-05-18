@@ -5,20 +5,19 @@ define("DB_PASSWORD", "root");
 define("DB_DATABASE_NAME", "loginapp");
 class Db
 {
-    protected $connection = null;
- 
-    public function __construct()
-    {
+
+    private $_conn = null;
+    public function getConnection() {
+        if (!is_null($this->_conn)) {
+            return $this->_conn;
+        }
+        $this->_conn = false;
         try {
-            $this->connection = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE_NAME);
-         
-            if ( mysqli_connect_errno()) {
-                throw new Exception("Could not connect to database.");   
-            }
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());   
-        }           
+            return$this->_conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE_NAME);
+        } catch(PDOException $e) { }
+        return $this->_conn;
     }
+
     public function post($query = "")
     {
         try {
@@ -34,7 +33,8 @@ class Db
     private function executeStatement($query = "")
     {
         try {
-            $stmt = $this->connection->prepare( $query );
+            $connection = $this->getConnection();
+            $stmt = $connection->prepare( $query );
  
             if($stmt === false) {
                 throw New Exception("Unable to do prepared statement: " . $query);

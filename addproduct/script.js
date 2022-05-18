@@ -3,17 +3,17 @@
 $('#productType').on('change',function(){
     var selection = $(this).val();
    switch(selection){
-    case "book":
+    case "Book":
    $("#optionsBook").show()
    $("#optionsDvd").hide()
    $("#optionsFurniture").hide()
   break;
-  case "furniture":
+  case "Furniture":
     $("#optionsFurniture").show()
     $("#optionsBook").hide()
     $("#optionsDvd").hide()
    break;
-   case "dvd":
+   case "Dvd":
     $("#optionsDvd").show()
     $("#optionsBook").hide()
     $("#optionsFurniture").hide()

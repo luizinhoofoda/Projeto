@@ -4,16 +4,13 @@ require_once "/MAMP/htdocs/addproduct/processing/require_master.php";
 //include_once "/MAMP/htdocs/addproduct/class/product.php";
 //set the furniture class, hers unique values and the save to db method
 class Furniture extends Product{
-
-    function set_height($height){
+    public function __construct($sku, $name, $price, $height, $width, $length) {
+        parent::__construct($sku, $name, $price);
         $this->height = $height;
-    }
-    function set_width($width){
         $this->width = $width;
-    }
-    function set_length($length){
-        $this->length = $length;
-    }
+        $this->length = $length;    
+       }
+
     function saveToDb(){
 
          $cadProd =  "INSERT INTO products (prodSku, prodName, prodPrice)
@@ -23,7 +20,7 @@ class Furniture extends Product{
                       
                       ('height', '$this->height', LAST_INSERT_ID()),
           
-                     ('width', '$this->width', LAST_INSERT_ID()),
+                      ('width', '$this->width', LAST_INSERT_ID()),
           
                       ('length', '$this->length', LAST_INSERT_ID());";
          
