@@ -6,16 +6,48 @@ header{
 }
 header h1 {
     display: inline;
-    margin-left: 40%;
+    margin-left: 5%;
     
 }
 .button{
-    margin-left: 30%;
+    margin-left: 70%;
 }
 
-.product-box h1, .product-box h2, .product-box .delete-checkbox{
+.product-box h1, .product-box .delete-checkbox{
     margin-left: 5em;
 }
+
+.product-box{
+    margin-left: 1em;
+    border-radius: 1em;
+}
+
+.delete-checkbox{
+    padding-top: 5px;
+    display: inline;
+}
+.product-box h2{
+    margin-left: 6em;
+}
+.book
+{
+   height: 250px;
+   
+
+}
+.dvd
+{
+   height: 250px; 
+   
+
+}
+.furniture
+{
+   height: 250px; 
+   
+
+}
+
 
 footer{
     position: fixed;

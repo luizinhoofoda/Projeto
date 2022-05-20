@@ -47,7 +47,7 @@ $prod->$prodType($_POST);
             <option value="" disabled selected hidden>Products</option>
             <option value="Book">Book</option>
             <option value="Furniture">Furniture</option>
-            <option value="Dvd">Dvd</option>
+            <option value="Dvd">DVD</option>
         </select>
 
         <div id = "optionsBook">
