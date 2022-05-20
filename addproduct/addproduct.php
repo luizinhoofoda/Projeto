@@ -21,7 +21,8 @@ $prod->$prodType($_POST);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="../addproduct/script.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
+    <script type="text/javascript" src="dataValidationScript.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>
@@ -82,7 +83,7 @@ $prod->$prodType($_POST);
     </div>
     <div></div>
     <footer><p>Scandiweb Test assignment</p></footer>
-    <script type="text/javascript" src="script.js"></script>
+    
     
     </body>
 

@@ -16,13 +16,16 @@ function deleteProductsFromDB(id) {
   $(".remove-slick").on("click", function () {
     deleteFromScreen = []
     let y = 0
-    checkboxes = document.getElementsByClassName('delete-checkbox');
-    for (i=0; i<checkboxes.length;i++){
+    checkBoxes = document.getElementsByClassName('delete-checkbox');
+    /* I actually didn't understand this logic after coming back a few days later so I will explain it better,we are selectin all of the checkboxes in the screen
+    and passing to checkboxes as a array, then I am interating this array and verifying if the checkbox is checked, if she is, then its id(that is the
+      product id itself) is passed to deleteFromScreen, a array, in which later we iterate this array and delete all ids in it from the db and screen */
+    for (i=0; i<checkBoxes.length;i++){
       var isChecked = $(checkboxes[i]).is(":checked");
        if (isChecked == true){
-        checkbox = checkboxes[i]
-     
-        deleteFromScreen[y] = $(checkbox).closest('div').attr('id')
+        checkBox = checkBoxes[i]
+        
+        deleteFromScreen[y] = $(checkBox).closest('div').attr('id')
         y++
   
     

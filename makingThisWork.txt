@@ -1,4 +1,4 @@
-To make this project work it will be necessary to change the require paths.
+To make this project work it will be necessary to change the require paths. PHP version  = 8.0.1 and MySQL version 5.7.24
 
 
                     ,-,-      

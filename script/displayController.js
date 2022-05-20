@@ -14,7 +14,8 @@ async function getproducts() {
 
   let i = 0;
 
-
+/*block in which the product will be display, the names are not very good, but it made it easier to link with the DB and improved the hability to have 
+new products by simply addig the main propertyName+Display as a function */ 
 function weightDisplay(arrOfProducts){
   var htmlSegment = `<div class="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="book" class = "delete-checkbox" id="delete-prod">
