@@ -21,7 +21,7 @@ function deleteProductsFromDB(id) {
     and passing to checkboxes as a array, then I am interating this array and verifying if the checkbox is checked, if she is, then its id(that is the
       product id itself) is passed to deleteFromScreen, a array, in which later we iterate this array and delete all ids in it from the db and screen */
     for (i=0; i<checkBoxes.length;i++){
-      var isChecked = $(checkboxes[i]).is(":checked");
+      var isChecked = $(checkBoxes[i]).is(":checked");
        if (isChecked == true){
         checkBox = checkBoxes[i]
         
