@@ -1,4 +1,5 @@
 <?php
+namespace MyApp\ProductDisplay\Api\Controller;
 class BaseController
 {
  
@@ -17,4 +18,3 @@ class BaseController
         exit;
     }
 }
-?>

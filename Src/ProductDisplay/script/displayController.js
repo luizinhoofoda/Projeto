@@ -58,7 +58,7 @@ i = i + 2;
 
 async function renderproducts() {
   let products = await getproducts();
-  console.log(products.length)
+
   while(i<products.length){
     let funcName = products[i].propName + "Display" 
   let  fn = window[funcName](products);

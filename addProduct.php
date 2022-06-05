@@ -1,15 +1,12 @@
-<?php 
-require __DIR__."/processing/require_master.php";
-if(isset($_POST['submit'])){
-
-$prod = new ProductProcessing;
-$prodType = "create".$_POST['productType'];
-$prod->$prodType($_POST);
-  
+<?php
+require_once realpath("vendor/autoload.php");
+use MyApp\AddProduct\ProductController\ProductController;
+if (isset($_POST['submit'])) {
+    $prod = new ProductController();
+    $prodType = "create".$_POST['productType'];
+    $prod->$prodType($_POST);
     $prod->redirect();
 }
-
-
 
 ?>
    
@@ -19,10 +16,10 @@ $prod->$prodType($_POST);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js" defer></script>
-    <script type="text/javascript" src="dataValidationScript.js" defer></script>
+    <title>Add Product</title>
+    <link rel="stylesheet" href="Src/AddProduct/style/style.css">
+    <script type="text/javascript" src="Src/AddProduct/script/script.js" defer></script>
+    <script type="text/javascript" src="Src/AddProduct/script/dataValidationScript.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>
@@ -33,7 +30,7 @@ $prod->$prodType($_POST);
         <button class="buttons headerButton" id="cancel" name="return">Cancel</button>
     </header>
     <div class="form-container">
-<form action="" method="POST" id="product_form">
+    <form action="" method="POST" id="product_form">
         <label for="sku" class="sku">Sku:</label>
         <input type="text" id="sku" name="sku" placeholder="sku">
         
@@ -85,8 +82,6 @@ $prod->$prodType($_POST);
     <footer><p>Scandiweb Test assignment</p></footer>
     
     
-    </body>
+</body>
 
 </html>
-
-   

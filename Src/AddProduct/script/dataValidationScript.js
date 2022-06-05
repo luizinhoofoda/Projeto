@@ -24,7 +24,7 @@ $(document).ready(function() {
   size: {
       required: {
       depends: function(elem) {
-      return $("#productType").val() == "dvd"
+      return $("#productType").val() == "Dvd"
       }
       },
       number: true,
@@ -33,7 +33,7 @@ $(document).ready(function() {
   weight: {
     required: {
       depends: function(elem) {
-        return $("#productType").val() == "book"
+        return $("#productType").val() == "Book"
       }
     },
     number: true,
@@ -42,7 +42,7 @@ $(document).ready(function() {
   height: {
       required: {
         depends: function(elem) {
-          return $("#productType").val() == "furniture"
+          return $("#productType").val() == "Furniture"
         }
       },
       number: true,
@@ -52,7 +52,7 @@ $(document).ready(function() {
   width: {
         required: {
           depends: function(elem) {
-            return $("#productType").val() == "furniture"
+            return $("#productType").val() == "Furniture"
           }
         },
         number: true,
@@ -61,7 +61,7 @@ $(document).ready(function() {
   length: {
         required: {
         depends: function(elem) {
-          return $("#productType").val() == "furniture"
+          return $("#productType").val() == "Furniture"
         }
        },
         number: true,
