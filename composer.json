@@ -3,5 +3,8 @@
         "psr-4": {
             "MyApp\\": "Src/"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
     }
 }

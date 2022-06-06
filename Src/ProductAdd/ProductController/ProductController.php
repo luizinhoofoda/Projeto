@@ -1,11 +1,10 @@
 <?php
 
-namespace MyApp\AddProduct\ProductController;
+namespace MyApp\ProductAdd\ProductController;
 
-use MyApp\AddProduct\ProductClasses\Book;
-use MyApp\AddProduct\ProductClasses\Dvd;
-use MyApp\AddProduct\ProductClasses\Furniture;
-require_once realpath("./vendor/autoload.php");
+use MyApp\ProductAdd\ProductClasses\Book;
+use MyApp\ProductAdd\ProductClasses\Dvd;
+use MyApp\ProductAdd\ProductClasses\Furniture;
 
 class ProductController extends Db
 {

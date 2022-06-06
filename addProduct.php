@@ -1,9 +1,11 @@
 <?php
+
 require_once realpath("vendor/autoload.php");
-use MyApp\AddProduct\ProductController\ProductController;
+use MyApp\ProductAdd\ProductController\ProductController;
+
 if (isset($_POST['submit'])) {
     $prod = new ProductController();
-    $prodType = "create".$_POST['productType'];
+    $prodType = "create" . $_POST['productType'];
     $prod->$prodType($_POST);
     $prod->redirect();
 }
@@ -17,9 +19,9 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
-    <link rel="stylesheet" href="Src/AddProduct/style/style.css">
-    <script type="text/javascript" src="Src/AddProduct/script/script.js" defer></script>
-    <script type="text/javascript" src="Src/AddProduct/script/dataValidationScript.js" defer></script>
+    <link rel="stylesheet" href="Src/ProductAdd/style/style.css">
+    <script type="text/javascript" src="Src/ProductAdd/script/script.js" defer></script>
+    <script type="text/javascript" src="Src/ProductAdd/script/dataValidationScript.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>

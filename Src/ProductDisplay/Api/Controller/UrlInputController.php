@@ -1,7 +1,7 @@
 <?php
 
 namespace MyApp\ProductDisplay\Api\Controller;
-require_once realpath("./vendor/autoload.php");
+
 use MyApp\ProductDisplay\Api\Controller\ProductController;
 
 class UrlInputController

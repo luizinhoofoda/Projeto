@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\AddProduct\ProductController;
+namespace MyApp\ProductAdd\ProductController;
 
 define("DB_HOST", "localhost");
 define("DB_USERNAME", "root");
@@ -9,19 +9,19 @@ define("DB_DATABASE_NAME", "loginapp");
 
 class Db
 {
-    private $_conn = null;
+    private $conn = null;
     public function getConnection()
     {
-        if (!is_null($this->_conn)) {
-            return $this->_conn;
+        if (!is_null($this->conn)) {
+            return $this->conn;
         }
-        $this->_conn = false;
+        $this->conn = false;
         try {
-            return$this->_conn = new \mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE_NAME);
+            return$this->conn = new \mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE_NAME);
         } catch (\Exception $e) {
-              echo $e; 
+            echo $e;
         }
-        return $this->_conn;
+        return $this->conn;
     }
 
     public function post($query = "")
@@ -34,19 +34,19 @@ class Db
         }
         return false;
     }
-    
+
     private function executeStatement($query = "")
     {
         try {
             $connection = $this->getConnection();
             $stmt = $connection->prepare($query);
- 
+
             if ($stmt === false) {
                 throw new \Exception("Unable to do prepared statement: " . $query);
             }
 
             $stmt->execute();
- 
+
             return $stmt;
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage());

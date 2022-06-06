@@ -43,7 +43,6 @@ label, input, select, p{
 footer{
     position: fixed;
     bottom: 0;
-    
     border-top: 1px solid black;
     width: 99%;
 }

@@ -1,6 +1,7 @@
 <?php
-namespace MyApp\AddProduct\ProductClasses;
-require_once realpath("./vendor/autoload.php");
+
+namespace MyApp\ProductAdd\ProductClasses;
+
 class Furniture extends Product
 {
     public function __construct($sku, $name, $price, $height, $width, $length)
@@ -15,12 +16,12 @@ class Furniture extends Product
     {
         $cadProd =  "INSERT INTO products (prodSku, prodName, prodPrice)
                       VALUES('$this->sku', '$this->name', '$this->price');";
-        $cadProp =  "INSERT INTO properties (propName, propValue, prodId) 
+        $cadProp =  "INSERT INTO properties (propName, propValue, prodId)
                      VALUES
                      ('height', '$this->height', LAST_INSERT_ID()),
                      ('width', '$this->width', LAST_INSERT_ID()),
                      ('length', '$this->length', LAST_INSERT_ID());";
-         
+
         $this->post($cadProd);
         $this->post($cadProp);
     }

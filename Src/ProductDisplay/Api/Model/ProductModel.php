@@ -1,8 +1,6 @@
 <?php
+
 namespace MyApp\ProductDisplay\Api\Model;
-
-require_once realpath("./vendor/autoload.php");
-
 
 class ProductModel extends Database
 {
