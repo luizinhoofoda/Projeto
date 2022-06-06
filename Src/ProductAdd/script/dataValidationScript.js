@@ -106,21 +106,21 @@ $(document).ready(function () {
     },
     // changes the place that the error message will be shown
     errorPlacement: function (error, element) {
-      if (element.attr('name') == 'sku') {
+      if (element.attr('name') === 'sku') {
         error.insertAfter('.sku')
-      } else if (element.attr('name') == 'name') {
+      } else if (element.attr('name') === 'name') {
         error.insertAfter('.name')
-      } else if (element.attr('name') == 'price') {
+      } else if (element.attr('name') === 'price') {
         error.insertAfter('.price')
-      } else if (element.attr('name') == 'size') {
+      } else if (element.attr('name') === 'size') {
         error.insertAfter('.size')
-      } else if (element.attr('name') == 'weight') {
+      } else if (element.attr('name') === 'weight') {
         error.insertAfter('.weight')
-      } else if (element.attr('name') == 'height') {
+      } else if (element.attr('name') === 'height') {
         error.insertAfter('.height')
-      } else if (element.attr('name') == 'width') {
+      } else if (element.attr('name') === 'width') {
         error.insertAfter('.width')
-      } else if (element.attr('name') == 'length') {
+      } else if (element.attr('name') === 'length') {
         error.insertAfter('.length')
       } else {
         error.insertAfter(element)

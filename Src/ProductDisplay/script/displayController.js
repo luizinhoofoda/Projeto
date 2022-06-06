@@ -12,7 +12,9 @@ async function getproducts () {
 let i = 0
 
 /*  block in which the product will be display, the names are not very good, but it made it easier to link with the DB and improved the hability to have
-new products by simply addig the main propertyName+Display as a function */
+new products by simply addig the main propertyName+Display as a function. Eslint was disable in the function declaration lines because the functions are called in a if or in another file,
+causing a error that was not a error in this case */
+// eslint-disable-next-line no-unused-vars
 function weightDisplay (arrOfProducts) {
   const htmlSegment = `<div class="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="book" class = "delete-checkbox" id="delete-prod">
@@ -26,7 +28,7 @@ function weightDisplay (arrOfProducts) {
 
   return $('.book').slick('slickAdd', htmlSegment)
 }
-
+// eslint-disable-next-line no-unused-vars
 function sizeDisplay (arrOfProducts) {
   const htmlSegment = `<div class="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="dvd" class = "delete-checkbox" id="delete-prod">
@@ -38,7 +40,7 @@ function sizeDisplay (arrOfProducts) {
   i++
   return $('.dvd').slick('slickAdd', htmlSegment)
 }
-
+// eslint-disable-next-line no-unused-vars
 function heightDisplay (arrOfProducts) {
   const htmlSegment = `<div class ="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="furniture" class = "delete-checkbox" id = "delete-prod">
@@ -51,12 +53,12 @@ function heightDisplay (arrOfProducts) {
   $('.furniture').slick('slickAdd', htmlSegment)
   i = i + 2
 }
-
+// eslint-disable-next-line no-unused-vars
 async function renderproducts () {
   const products = await getproducts()
 
   while (i < products.length) {
     const funcName = products[i].propName + 'Display'
-    const fn = window[funcName](products)
+    window[funcName](products)
   }
 }

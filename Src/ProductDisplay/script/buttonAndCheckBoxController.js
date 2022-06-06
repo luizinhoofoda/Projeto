@@ -20,7 +20,7 @@ $('.remove-slick').on('click', function () {
       product id itself) is passed to deleteFromScreen, a array, in which later we iterate this array and delete all ids in it from the db and screen */
   for (let i = 0; i < checkBoxes.length; i++) {
     const isChecked = $(checkBoxes[i]).is(':checked')
-    if (isChecked == true) {
+    if (isChecked === true) {
       const checkBox = checkBoxes[i]
 
       deleteFromScreen[y] = $(checkBox).closest('div').attr('id')
@@ -31,7 +31,7 @@ $('.remove-slick').on('click', function () {
   for (let i = 0; i < deleteFromScreen.length; i++) {
     $('#' + deleteFromScreen[i]).remove()
 
-    if (deleteFromScreen[i] != undefined) { deleteProductsFromDB(deleteFromScreen[i]) }
+    if (deleteFromScreen[i] !== undefined) { deleteProductsFromDB(deleteFromScreen[i]) }
   }
 })
 
