@@ -7,55 +7,54 @@ header{
 header h1 {
     display: inline;
     margin-left: 5%;
-    
 }
 .button{
     margin-left: 70%;
 }
-
-.product-box h1, .product-box .delete-checkbox{
-    margin-left: 5em;
-}
-
 .product-box{
-    margin-left: 1em;
-    border-radius: 1em;
+    margin-left: 2.5em;
+    margin-right: 3em;
+    border: 2px solid black;
+    font-size: 0.8em;
 }
 
 .delete-checkbox{
-    padding-top: 5px;
-    display: inline;
+    margin-top: 1em;
+    
 }
+.product-box .delete-checkbox{
+    margin-left: 1em;
+}
+
+.product-box h2:last-child{
+    margin-bottom: 1.5em;
+}
+
 .product-box h2{
-    margin-left: 6em;
+    text-align: center;
+    margin: 0.5em;
 }
+
 .book
 {
    height: 250px;
-   
-
 }
 .dvd
 {
-   height: 250px; 
-   
-
+   height: 250px;
 }
 .furniture
 {
-   height: 250px; 
-   
-
+   height: 250px;
 }
 
 
 footer{
     position: fixed;
     bottom: 0;
-    
     border-top: 1px solid black;
     width: 99%;
 }
 footer p{
-    padding-left: 40%;
+    padding-left: 45%;
 }

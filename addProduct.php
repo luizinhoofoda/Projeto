@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
         <div id = "optionsBook">
             <label for="weight" class="weight">Weight:</label>
             <input type="text" id="weight" name="weight">
-            
+
             <p>Please provide the weight in KG</p>
             
         </div>

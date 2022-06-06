@@ -18,10 +18,10 @@ causing a error that was not a error in this case */
 function weightDisplay (arrOfProducts) {
   const htmlSegment = `<div class="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="book" class = "delete-checkbox" id="delete-prod">
-  <h1>${arrOfProducts[i].prodSku} </h1>
+  <h2>${arrOfProducts[i].prodSku} </h1>
   <h2>${arrOfProducts[i].prodName}</h2>
-  <h2>${arrOfProducts[i].prodPrice}</h2>
-  <h2>${arrOfProducts[i].propValue} KG</h2>
+  <h2>${arrOfProducts[i].prodPrice} $</h2>
+  <h2>Weight: ${arrOfProducts[i].propValue} KG</h2>
   
 </div>`
   i++
@@ -32,10 +32,10 @@ function weightDisplay (arrOfProducts) {
 function sizeDisplay (arrOfProducts) {
   const htmlSegment = `<div class="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="dvd" class = "delete-checkbox" id="delete-prod">
-  <h1>${arrOfProducts[i].prodSku} </h1>
+  <h2>${arrOfProducts[i].prodSku} </h1>
   <h2>${arrOfProducts[i].prodName}</h2>
-  <h2>${arrOfProducts[i].prodPrice}</h2>
-  <h2>${arrOfProducts[i].propValue} MB</h2>
+  <h2>${arrOfProducts[i].prodPrice} $</h2>
+  <h2>Size: ${arrOfProducts[i].propValue} MB</h2>
   </div>`
   i++
   return $('.dvd').slick('slickAdd', htmlSegment)
@@ -44,10 +44,10 @@ function sizeDisplay (arrOfProducts) {
 function heightDisplay (arrOfProducts) {
   const htmlSegment = `<div class ="product-box" id = ${arrOfProducts[i].prodId}>
   <input type="checkbox" name="furniture" class = "delete-checkbox" id = "delete-prod">
-  <h1>${arrOfProducts[i].prodSku} </h1>
+  <h2>${arrOfProducts[i].prodSku} </h1>
   <h2>${arrOfProducts[i].prodName}</h2>
-  <h2>${arrOfProducts[i].prodPrice}</h2>
-  <h2>${arrOfProducts[i].propValue}x${arrOfProducts[i + 1].propValue}x${arrOfProducts[i + 2].propValue}</h2>
+  <h2>${arrOfProducts[i].prodPrice} $</h2>
+  <h2>Dimension: ${arrOfProducts[i].propValue}x${arrOfProducts[i + 1].propValue}x${arrOfProducts[i + 2].propValue}</h2>
   </div>`
   i++
   $('.furniture').slick('slickAdd', htmlSegment)

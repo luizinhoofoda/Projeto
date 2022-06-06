@@ -7,12 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'MyApp\\AddProduct\\ProductClasses\\Book' => $baseDir . '/Src/AddProduct/ProductClasses/Book.php',
-    'MyApp\\AddProduct\\ProductClasses\\Dvd' => $baseDir . '/Src/AddProduct/ProductClasses/Dvd.php',
-    'MyApp\\AddProduct\\ProductClasses\\Furniture' => $baseDir . '/Src/AddProduct/ProductClasses/Furniture.php',
-    'MyApp\\AddProduct\\ProductClasses\\Product' => $baseDir . '/Src/AddProduct/ProductClasses/Product.php',
-    'MyApp\\AddProduct\\ProductController\\Db' => $baseDir . '/Src/AddProduct/ProductController/Db.php',
-    'MyApp\\AddProduct\\ProductController\\ProductController' => $baseDir . '/Src/AddProduct/ProductController/ProductController.php',
+    'MyApp\\ProductAdd\\ProductClasses\\Book' => $baseDir . '/Src/ProductAdd/ProductClasses/Book.php',
+    'MyApp\\ProductAdd\\ProductClasses\\Dvd' => $baseDir . '/Src/ProductAdd/ProductClasses/Dvd.php',
+    'MyApp\\ProductAdd\\ProductClasses\\Furniture' => $baseDir . '/Src/ProductAdd/ProductClasses/Furniture.php',
+    'MyApp\\ProductAdd\\ProductClasses\\Product' => $baseDir . '/Src/ProductAdd/ProductClasses/Product.php',
+    'MyApp\\ProductAdd\\ProductController\\Db' => $baseDir . '/Src/ProductAdd/ProductController/Db.php',
+    'MyApp\\ProductAdd\\ProductController\\ProductController' => $baseDir . '/Src/ProductAdd/ProductController/ProductController.php',
     'MyApp\\ProductDisplay\\Api\\Controller\\BaseController' => $baseDir . '/Src/ProductDisplay/Api/Controller/BaseController.php',
     'MyApp\\ProductDisplay\\Api\\Controller\\ProductController' => $baseDir . '/Src/ProductDisplay/Api/Controller/ProductController.php',
     'MyApp\\ProductDisplay\\Api\\Controller\\UrlInputController' => $baseDir . '/Src/ProductDisplay/Api/Controller/UrlInputController.php',

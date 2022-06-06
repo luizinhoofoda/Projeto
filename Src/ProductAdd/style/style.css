@@ -15,12 +15,12 @@ header{
     padding-bottom: 1.5em;
 }
 header h1{
-    margin: 0 0 0 40%;
+    margin: 0 0 0 45%;
     display: inline;
 }
 .form-container{
 
-margin: 2% 0 0 40%;
+margin: 2% 0 0 45%;
 
 }
 .headerButton{
@@ -48,5 +48,5 @@ footer{
 }
 footer p{
     padding-top: 1em;
-    padding-left: 40%;
+    padding-left: 45%;
 }
