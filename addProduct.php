@@ -34,13 +34,13 @@ if (isset($_POST['submit'])) {
     <div class="form-container">
     <form action="" method="POST" id="product_form">
         <label for="sku" class="sku">Sku:</label>
-        <input type="text" id="sku" name="sku" placeholder="sku">
+        <input type="text" id="sku" name="sku" placeholder="Sku">
         
         <label for="name" class="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="name">
+        <input type="text" id="name" name="name" placeholder="Name">
         
         <label for="price" class="price">Price:</label>
-        <input type="text" id="price" name="price" placeholder="price">
+        <input type="text" id="price" name="price" placeholder="Price">
        
         <label for="productType">Type Switcher</label>
         <select name="productType" id="productType">
@@ -52,27 +52,27 @@ if (isset($_POST['submit'])) {
 
         <div id = "optionsBook">
             <label for="weight" class="weight">Weight:</label>
-            <input type="text" id="weight" name="weight">
+            <input type="text" id="weight" name="weight" placeholder="Weight">
 
             <p>Please provide the weight in KG</p>
             
         </div>
         <div id = "optionsFurniture">
             <label for="height" class="height">Height:</label>
-            <input type="text" id = "height" name="height">
+            <input type="text" id = "height" name="height" placeholder="Height">
             
             <label for="width" class="width">Width:</label>
-            <input type="text" id = "width" name="width" >
+            <input type="text" id = "width" name="width" placeholder="Width">
             
             <label for="length" class="length">Length:</label>
-            <input type="text" id = "length" name="length">  
+            <input type="text" id = "length" name="length" placeholder="Length">  
          
             <p>Please provide the dimensions in HxWxL format</p>
 
         </div>
         <div id = "optionsDvd">
             <label for="size" class="size">Size:</label>
-            <input type="text" id = "size" name="size">
+            <input type="text" id = "size" name="size" placeholder="Size">
             
             <p>Please provide the size in MB</p>
 
